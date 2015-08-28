@@ -23,8 +23,7 @@ public class WelcomeClass{
         System.out.println("<-K--T--G--3--1--4->");
         System.out.println(" \\ /\\ /\\ /\\ /\\ /\\ /");
         System.out.println("  v  v  v  v  v  v");
-        System.out.println("This August my wife and I took an eleven-day, 675-mile bike");
-        System.out.println("tour on our tandem. We circled Lake Ontario.");
+        System.out.println("I'm trilingual. I can speak English, Swedish, and Japanese :)");
         
         
         //test//testtest1
