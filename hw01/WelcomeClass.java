@@ -1,6 +1,6 @@
 //////////////////////////////////
 //Ken Grenstedt
-//hw #1
+//hw01
 //Welcome Class Program
 //
 //  first compile the program
@@ -14,15 +14,18 @@ public class WelcomeClass{
 //  add main method
     public static void main(String[] args) {
         
-//  print the tweet-length autobiographic statement
+//  print the welcome messagge-art thing
         System.out.println("  -----------");
         System.out.println("  | WELCOME |");
         System.out.println("  -----------");
+//  add my unique Lehigh ID number
         System.out.println("  ^  ^  ^  ^  ^  ^");
         System.out.println(" / \\/ \\/ \\/ \\/ \\/ \\");
         System.out.println("<-K--T--G--3--1--4->");
         System.out.println(" \\ /\\ /\\ /\\ /\\ /\\ /");
         System.out.println("  v  v  v  v  v  v");
+        
+//  below is the autobiographical statement
         System.out.println("I'm trilingual. I can speak English, Swedish, and Japanese :)");
         
         
