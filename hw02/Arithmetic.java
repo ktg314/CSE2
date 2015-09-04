@@ -57,12 +57,11 @@ public class Arithmetic {
         
         
         //////Tax
-        
         //total pre-tax cost
         double preTaxCost$;
         preTaxCost$ = totalSockCost$ + totalBoxCost$ + totalGlassCost$;
         
-        //percentage tax
+        //defining percentage tax
         double taxPercent=0.06;
         
         //total sales tax
@@ -78,42 +77,45 @@ public class Arithmetic {
                 pennies,    //100ths
                 subpennies; //1000ths
             
-            dollars = (int) salesTax;
-            dimes = (int) ((salesTax*10)%10);
-            pennies = (int) ((salesTax*100)%10);
-            subpennies = (int) ((salesTax*1000)%10);
+            dollars = (int) salesTax;                   //all the whole numbers before the decimal
+            dimes = (int) ((salesTax*10)%10);           //the 10s place digit as an integer
+            pennies = (int) ((salesTax*100)%10);        //the 100s place digit as an integer
+            subpennies = (int) ((salesTax*1000)%10);    //the 1000s place digit as an integer
             
-                //if-then-else statement
+                //if-then-else statement for rounding
+                
                 
                 //open if statement
                 if (subpennies > 4) { 
                 ++pennies;
                 }   //close if statement
+                //above rounds the number in the hundred's place 
+                //up by 1 if the 1000ths place digit is 5 or greater
                 
                 //open else statement
                 else {
                 pennies = (int) ((salesTax*100)%10);
-                
                 }   //close else statement
+                //else statement makes sure that nothing happens and
+                //the 1000ths place digit is simply dropped if it 4 or less
+                //and redefines the 100ths place digit just in case
+                
         
         //rounded sales tax
         double roundedSalesTax;
        
-        //cast int dimes/pennies into doubles
+        //cast integer dimes/pennies into doubles
         double ddimes = (double) (dimes);
         double ppennies = (double) pennies;
         
+        //currently the variables hold the digits in the 10s and 100s place as integers,
+        //this process turns them back into the decimal form
         roundedSalesTax = ddimes/10 + ppennies/100;
     
         
         //total post-tax cost
         double postTaxCost$;
         postTaxCost$ = preTaxCost$ + roundedSalesTax;
-        
-        
-        
-            
-        
         
         
         
