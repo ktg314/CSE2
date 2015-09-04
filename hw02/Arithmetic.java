@@ -32,7 +32,7 @@ public class Arithmetic {
         double totalSockCost$;
         totalSockCost$ = nSocks * sockCost$;
         
-        ////////////Envelopes/Box//////////////
+        ////////////Envelopes/Box////////////
         //number of boxes of envelopes
         int nEnvelopes=1;
         
@@ -44,12 +44,23 @@ public class Arithmetic {
         totalBoxCost$ = nEnvelopes * envelopeCost$;
         
         
+        ////////////Glasses///////////////
+        //number of drinking glasses
+        int nGlass=6;
+        
+        //cost per glass
+        double glassCost$=2.29;
+        
+        //total glass cost
+        double totalGlassCost$;
+        totalGlassCost$ = nGlass * glassCost$;
+        
         
         //////Tax
         
         //total pre-tax cost
         double preTaxCost$;
-        preTaxCost$ = totalSockCost$ + totalBoxCost$;
+        preTaxCost$ = totalSockCost$ + totalBoxCost$ + totalGlassCost$;
         
         //percentage tax
         double taxPercent=0.06;
@@ -60,11 +71,12 @@ public class Arithmetic {
         
             //ROUNDING the sales tax//
             //rounding to 2 digits past integer
-            //double TaxCost$;
-            //TaxCost$=salesTax;
             
             //defining variables for whole numbers, 10ths, 100ths etc.
-            int dollars, dimes, pennies, subpennies; 
+            int dollars,    //whole numbers
+                dimes,      //10ths
+                pennies,    //100ths
+                subpennies; //1000ths
             
             dollars = (int) salesTax;
             dimes = (int) ((salesTax*10)%10);
@@ -72,6 +84,7 @@ public class Arithmetic {
             subpennies = (int) ((salesTax*1000)%10);
             
                 //if-then-else statement
+                
                 //open if statement
                 if (subpennies > 4) { 
                 ++pennies;
@@ -106,14 +119,15 @@ public class Arithmetic {
         
         ///////Statement
         
-        System.out.println("You went to Walmart to buy some socks and envelopes.");
-        System.out.println("You bought "+nSocks+" socks and "+nEnvelopes+" envelopes.");
-        System.out.println("The socks cost $"+sockCost$+" each while the envelopes cost $"+envelopeCost$+" each.");
-        System.out.println("The total cost of socks was $"+totalSockCost$+" pre-tax.");
+        System.out.println("You went to Walmart to buy some socks, glasses, and envelopes.");
+        System.out.println("You bought "+nSocks+" socks, "+nGlass+" glasses and "+nEnvelopes+" envelope.");
+        System.out.println("The socks cost $"+sockCost$+" each, the glasses cost $"+glassCost$+" each and the envelopes cost $"+envelopeCost$+" each.");
+        System.out.println("The total cost of the socks was $"+totalSockCost$+" pre-tax.");
+        System.out.println("The total cost of the glasses was $"+totalGlassCost$+" pre-tax.");
         System.out.println("The total cost of the envelopes was $"+totalBoxCost$+" pre-tax.");
         System.out.println("The total cost of all bought items was $"+preTaxCost$+" pre-tax.");
-        System.out.println("Assuming a tax rate of "+(taxPercent*100)+"%, the total sales tax was $"+dollars+"."+dimes+pennies);
-        System.out.println("The total cost of the purchases (including sales tax) was $"+postTaxCost$);
+        System.out.println("Assuming a tax rate of "+(taxPercent*100)+"%, $"+dollars+"."+dimes+pennies+" was the total sales tax.");
+        System.out.println("The total cost of the purchases (including sales tax) was then $"+postTaxCost$);
         
         
             
