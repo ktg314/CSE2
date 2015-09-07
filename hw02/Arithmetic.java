@@ -105,17 +105,33 @@ public class Arithmetic {
         double roundedSalesTax;
        
         //cast integer dimes/pennies into doubles
-        double ddimes = (double) (dimes);
-        double ppennies = (double) pennies;
+        double dimess = (double) (dimes);
+        double penniess = (double) pennies;
         
         //currently the variables hold the digits in the 10s and 100s place as integers,
         //this process turns them back into the decimal form
-        roundedSalesTax = ddimes/10 + ppennies/100;
+        roundedSalesTax = dimess/10 + penniess/100;
     
         
         //total post-tax cost
         double postTaxCost$;
         postTaxCost$ = preTaxCost$ + roundedSalesTax;
+        
+        
+        //individual sales tax amounts
+        double salesTaxSocks = totalSockCost$ * taxPercent,
+            salesTaxBoxes = totalBoxCost$ * taxPercent,
+            salesTaxGlasses = totalGlassCost$ * taxPercent;
+            
+        //rounding individual tax amounts
+        double roundedTaxSocks = (int) (salesTaxSocks*100),
+            roundedTaxBoxes = (int) (salesTaxBoxes*100),
+            roundedTaxGlasses = (int) (salesTaxGlasses*100);
+            
+    
+        
+    
+        
         
         
         
@@ -124,15 +140,13 @@ public class Arithmetic {
         System.out.println("You went to Walmart to buy some socks, glasses, and envelopes.");
         System.out.println("You bought "+nSocks+" socks, "+nGlass+" glasses and "+nEnvelopes+" envelope.");
         System.out.println("The socks cost $"+sockCost$+" each, the glasses cost $"+glassCost$+" each and the envelopes cost $"+envelopeCost$+" each.");
-        System.out.println("The total cost of the socks was $"+totalSockCost$+" pre-tax.");
-        System.out.println("The total cost of the glasses was $"+totalGlassCost$+" pre-tax.");
-        System.out.println("The total cost of the envelopes was $"+totalBoxCost$+" pre-tax.");
+        System.out.println("The total cost of the socks was $"+totalSockCost$+" with a tax of $"+roundedTaxSocks/100);
+        System.out.println("The total cost of the glasses was $"+totalGlassCost$+" with a tax of $"+roundedTaxGlasses/100);
+        System.out.println("The total cost of the envelopes was $"+totalBoxCost$+" with a tax of $"+roundedTaxBoxes/100);
         System.out.println("The total cost of all bought items was $"+preTaxCost$+" pre-tax.");
         System.out.println("Assuming a tax rate of "+(taxPercent*100)+"%, $"+dollars+"."+dimes+pennies+" was the total sales tax.");
         System.out.println("The total cost of the purchases (including sales tax) was then $"+postTaxCost$);
-        
-        
-            
+
         
         
 //  close main method    
