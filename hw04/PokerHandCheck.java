@@ -18,7 +18,7 @@
 // note to self: different from normal poker as you can draw the same card
 // potentially twice, can use the same generator multiple times. 
 
-import java.util.Scanner;       //temporary to test whether if/else statement works
+//import java.util.Scanner;       //temporary to test whether if/else statement works
 
 public class PokerHandCheck {    //open class
     public static void main(String[] args) {    //open main method
@@ -258,105 +258,58 @@ public class PokerHandCheck {    //open class
         System.out.println("    The "+cardName4+" of "+suit4);
         System.out.println("    The "+cardName5+" of "+suit5);
 
-        
-        // TESTING CARD HANDS
-        // Scanner myScanner;
-        // myScanner = new Scanner (System.in);
-        // String temp1 = myScanner.next();
-        // String temp2 = myScanner.next();
-        // String temp3 = myScanner.next();
-        // String temp4 = myScanner.next();
-        // String temp5 = myScanner.next();
-        // if (temp1.equals(temp2) && temp2.equals(temp3) && 
-        // temp3.equals(temp4) && temp4.equals(temp5)) {
-        //     System.out.println("You have five of a kind!!!");
-        // }
-        
-        
-        //differnet card combinations
-        //three of a kind combinations: 
-        //123, 124, 125, 134, 135, 145
-        //234, 235, 245
-        //345
-        //starting with 1's
-        if (cardName1.equals(cardName2) && cardName1.equals(cardName3)) {
-            System.out.println("You have a three of a kind!");
-        }
-        else if (cardName1.equals(cardName2) && cardName1.equals(cardName4)) {
-            System.out.println("You have a three of a kind!");
-        }
-        else if (cardName1.equals(cardName2) && cardName1.equals(cardName5)) {
-            System.out.println("You have a three of a kind!");
-        }
-        else if (cardName1.equals(cardName3) && cardName1.equals(cardName4)) {
-            System.out.println("You have a three of a kind!");
-        }
-        else if (cardName1.equals(cardName3) && cardName1.equals(cardName5)) {
-            System.out.println("You have a three of a kind!");
-        }
-        else if (cardName1.equals(cardName4) && cardName1.equals(cardName5)) {
-            System.out.println("You have a three of a kind!");
-        }
-        //234, 235, 245
-        else if (cardName2.equals(cardName3) && cardName2.equals(cardName4)) {
-            System.out.println("You have a three of a kind!");
-        }
-        else if (cardName2.equals(cardName3) && cardName1.equals(cardName5)) {
-            System.out.println("You have a three of a kind!");
-        }
-        else if (cardName2.equals(cardName4) && cardName1.equals(cardName5)) {
-            System.out.println("You have a three of a kind!");
-        }
-        //345
-        else if (cardName3.equals(cardName4) && cardName1.equals(cardName5)) {
-            System.out.println("You have a three of a kind!");
-        }
-        
-        //two of a kind (aka pair) combinations of equal cards
-        //12, 13, 14, 15
-        //23, 24, 25
-        //34, 35
-        //45
+        int pair = 0;   //for number of pairs
+        //if 3 -> triple
+        //if 2 -> 2 pair
+        //if 1 -> pair
         
         //pairs containing card 1
-        else if (cardName1.equals(cardName2)) {
-            System.out.println("You have a pair!");
+        if (cardName1.equals(cardName2)) {
+            pair += 1;
         }
-        else if (cardName1.equals(cardName3)) {
-            System.out.println("You have a pair!");
+        if (cardName1.equals(cardName3)) {
+            pair += 1;
         }
-        else if (cardName1.equals(cardName4)) {
-            System.out.println("You have a pair!");
+        if (cardName1.equals(cardName4)) {
+            pair += 1;
         }
-        else if (cardName1.equals(cardName5)) {
-            System.out.println("You have a pair!");
+        if (cardName1.equals(cardName5)) {
+            pair += 1;
         }
         //pairs starting with card 2
         //23, 24, 25
-        else if (cardName2.equals(cardName3)) {
-            System.out.println("You have a pair!");
+        if (cardName2.equals(cardName3)) {
+            pair += 1;
         }
-        else if (cardName2.equals(cardName4)) {
-            System.out.println("You have a pair!");
+        if (cardName2.equals(cardName4)) {
+            pair += 1;
         }
-        else if (cardName2.equals(cardName5)) {
-            System.out.println("You have a pair!");
+        if (cardName2.equals(cardName5)) {
+            pair += 1;
         }
         //pairs starting with card3
         //34, 35
-        else if (cardName3.equals(cardName4)) {
-            System.out.println("You have a pair!");
+        if (cardName3.equals(cardName4)) {
+            pair += 1;
         }
-        else if (cardName3.equals(cardName5)) {
-            System.out.println("You have a pair!");
+        if (cardName3.equals(cardName5)) {
+            pair += 1;
         }
         //pairs starting with card 4
         //45
-        else if (cardName4.equals(cardName5)) {
+         if (cardName4.equals(cardName5)) {
+            pair += 1;
+        }
+    
+        if (pair == 3) {
+            System.out.println("You have three of a kind!");
+        }
+        else if (pair == 2) {
+            System.out.println("You have a two pair!");
+        }
+        else if (pair == 1) {
             System.out.println("You have a pair!");
         }
-        
-        //if I don't have any of the previous hands.
         else {
             System.out.println("You have a high card hand!");
         }
