@@ -38,7 +38,7 @@ public class CheckDigit {
                 }
                 if (j == 10) {
                     bError = false;
-                    continue;
+                    continue; 
                 }
                 else {
                     j = 0;
